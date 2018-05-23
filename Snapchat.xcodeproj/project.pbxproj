@@ -16,6 +16,7 @@
 		E2F1130E20AD017500B3CCF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2F1130D20AD017500B3CCF0 /* GoogleService-Info.plist */; };
 		E2F1131120AD15A300B3CCF0 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1131020AD15A300B3CCF0 /* SnapsViewController.swift */; };
 		E2F1131320AD186400B3CCF0 /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1131220AD186400B3CCF0 /* ImagenViewController.swift */; };
+		E2F882BB20B618420071E308 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F882BA20B618420071E308 /* ElegirUsuarioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E2F1130F20AD14DA00B3CCF0 /* Snapchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snapchat.entitlements; sourceTree = "<group>"; };
 		E2F1131020AD15A300B3CCF0 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		E2F1131220AD186400B3CCF0 /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
+		E2F882BA20B618420071E308 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				E2F1130720ACF52B00B3CCF0 /* Info.plist */,
 				E2F1131020AD15A300B3CCF0 /* SnapsViewController.swift */,
 				E2F1131220AD186400B3CCF0 /* ImagenViewController.swift */,
+				E2F882BA20B618420071E308 /* ElegirUsuarioViewController.swift */,
 			);
 			path = Snapchat;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				E2F1131320AD186400B3CCF0 /* ImagenViewController.swift in Sources */,
 				E2F112FC20ACF52B00B3CCF0 /* AppDelegate.swift in Sources */,
 				E2F1131120AD15A300B3CCF0 /* SnapsViewController.swift in Sources */,
+				E2F882BB20B618420071E308 /* ElegirUsuarioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

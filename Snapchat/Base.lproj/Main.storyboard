@@ -160,16 +160,31 @@
             </objects>
             <point key="canvasLocation" x="2585" y="-96"/>
         </scene>
-        <!--View Controller-->
+        <!--Elegir Usuario View Controller-->
         <scene sceneID="ode-M5-arC">
             <objects>
-                <viewController id="akX-FF-x7c" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="akX-FF-x7c" customClass="ElegirUsuarioViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ijG-kE-8Tg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wYD-Dn-Iif">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYD-Dn-Iif" firstAttribute="leading" secondItem="JBm-fO-NRi" secondAttribute="leading" id="CHK-Cs-9g4"/>
+                            <constraint firstItem="JBm-fO-NRi" firstAttribute="trailing" secondItem="wYD-Dn-Iif" secondAttribute="trailing" id="JtM-lO-pes"/>
+                            <constraint firstItem="JBm-fO-NRi" firstAttribute="bottom" secondItem="wYD-Dn-Iif" secondAttribute="bottom" id="Rrq-1C-VbE"/>
+                            <constraint firstItem="wYD-Dn-Iif" firstAttribute="top" secondItem="JBm-fO-NRi" secondAttribute="top" id="ear-g8-cJh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JBm-fO-NRi"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wYD-Dn-Iif" id="brN-h5-VDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvJ-r3-Cfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
