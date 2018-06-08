@@ -22,7 +22,9 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         imagePicker.delegate = self
         elegirContactoBoton.isEnabled = false
-        // Do any additional setup after loading the view.
+        elegirContactoBoton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        elegirContactoBoton.alpha = 0.5
+        elegirContactoBoton.layer.cornerRadius = 13
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -30,11 +32,14 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
         imageView.backgroundColor = UIColor.clear
         imagePicker.dismiss(animated: true, completion: nil)
         elegirContactoBoton.isEnabled = true
+        elegirContactoBoton.alpha = 1
+        self.elegirContactoBoton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
     @IBAction func camaraTapped(_ sender: Any) {
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
+        
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func elegirContactoTapped(_ sender: Any) {
@@ -43,6 +48,8 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imagenData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         imagenesFolder.child("\(imagenID).jpg").putData(imagenData, metadata: nil) { (metadata, error) in
             self.elegirContactoBoton.isEnabled = true
+            
+            
             if error != nil {
                 
             } else {
