@@ -15,8 +15,10 @@ class ElegirUsuarioViewController: UIViewController,UITableViewDataSource, UITab
     
     var usuarios : [Usuario] = []
     var imagenURL = ""
+    var audioURL = "" //recibiendo el url
     var descrip = ""
     var imagenID = ""
+    var audioID = "" //recibiendo el id
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,7 @@ class ElegirUsuarioViewController: UIViewController,UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let usuario = usuarios[indexPath.row]
-        let snap = ["from":Auth.auth().currentUser!.email!, "descripcion":descrip, "imagenURL":imagenURL,"imagenID":imagenID]
+        let snap = ["from":Auth.auth().currentUser!.email!, "descripcion":descrip, "imagenURL":imagenURL,"imagenID":imagenID,"audioURL":audioURL,"audioID":audioID]
     Database.database().reference().child("usuarios").child(usuario.uid).child("snaps").childByAutoId().setValue(snap)
      navigationController?.popToRootViewController(animated: true)
     }

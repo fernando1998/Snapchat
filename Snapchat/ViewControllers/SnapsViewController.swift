@@ -22,12 +22,14 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         Database.database().reference().child("usuarios").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childAdded, with: {(snapshot) in
             let snap = Snap()
-            
+            //Se ha agreado 2 lineas para el audio
             snap.imagenURL = (snapshot.value as! NSDictionary)["imagenURL"] as! String
+            snap.audioURL = (snapshot.value as! NSDictionary)["audioURL"] as! String //audio url
             snap.from = (snapshot.value as! NSDictionary)["from"] as! String
             snap.descrip = (snapshot.value as! NSDictionary)["descripcion"] as! String
             snap.id = snapshot.key
             snap.imagenID = (snapshot.value as! NSDictionary)["imagenID"] as! String
+            snap.audioID = (snapshot.value as! NSDictionary)["audioID"] as! String //audio id 
             self.snaps.append(snap)
             self.tableView.reloadData()
         })

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -200,7 +200,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dma-0h-xEt">
-                                <rect key="frame" x="117" y="277" width="140" height="34"/>
+                                <rect key="frame" x="117" y="360" width="140" height="34"/>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="cF6-KV-hM0"/>
@@ -213,13 +213,29 @@
                                     <action selector="elegirContactoTapped:" destination="ysq-Su-oE1" eventType="touchUpInside" id="8ev-6b-d51"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqE-Nd-dah">
+                                <rect key="frame" x="122" y="297" width="130" height="33"/>
+                                <color key="backgroundColor" red="0.23034731219999999" green="0.1937336969" blue="0.033933561979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="QNv-2q-0Po"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Grabar audio">
+                                    <color key="titleColor" red="0.94138601040000003" green="0.94138601040000003" blue="0.94138601040000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="grabarTapped:" destination="ysq-Su-oE1" eventType="touchUpInside" id="5bM-NP-1iT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.84705882352941175" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uqE-Nd-dah" firstAttribute="top" secondItem="FFE-NR-fr5" secondAttribute="bottom" constant="40" id="5Hc-p3-9Mh"/>
                             <constraint firstItem="FhL-O1-U39" firstAttribute="top" secondItem="cIm-vW-dvU" secondAttribute="top" constant="20" id="9mo-He-Nyr"/>
+                            <constraint firstItem="uqE-Nd-dah" firstAttribute="centerX" secondItem="vO8-Mf-EPM" secondAttribute="centerX" id="KHY-DQ-ZDP"/>
                             <constraint firstItem="dma-0h-xEt" firstAttribute="centerX" secondItem="vO8-Mf-EPM" secondAttribute="centerX" id="O1P-Td-t6b"/>
                             <constraint firstItem="FFE-NR-fr5" firstAttribute="width" secondItem="FhL-O1-U39" secondAttribute="width" id="OKY-YY-vvd"/>
-                            <constraint firstItem="dma-0h-xEt" firstAttribute="top" secondItem="FFE-NR-fr5" secondAttribute="bottom" constant="20" id="agA-zC-sZX"/>
+                            <constraint firstItem="dma-0h-xEt" firstAttribute="top" secondItem="uqE-Nd-dah" secondAttribute="bottom" constant="30" id="dOW-Bb-2iq"/>
                             <constraint firstItem="FFE-NR-fr5" firstAttribute="top" secondItem="FhL-O1-U39" secondAttribute="bottom" constant="15" id="fPA-2J-0pE"/>
                             <constraint firstItem="FhL-O1-U39" firstAttribute="centerX" secondItem="vO8-Mf-EPM" secondAttribute="centerX" id="i6R-sW-wmN"/>
                             <constraint firstItem="FFE-NR-fr5" firstAttribute="centerX" secondItem="vO8-Mf-EPM" secondAttribute="centerX" id="q5L-8u-p5v"/>
@@ -236,6 +252,7 @@
                     <connections>
                         <outlet property="descripcionTextField" destination="FFE-NR-fr5" id="WQo-dy-XE5"/>
                         <outlet property="elegirContactoBoton" destination="dma-0h-xEt" id="Hek-oY-WM1"/>
+                        <outlet property="grabarAudioBoton" destination="uqE-Nd-dah" id="lLg-zX-6y2"/>
                         <outlet property="imageView" destination="FhL-O1-U39" id="9p1-h2-H3n"/>
                         <segue destination="akX-FF-x7c" kind="show" identifier="seleccionarContactoSegue" id="7vR-vh-Yl2"/>
                     </connections>
