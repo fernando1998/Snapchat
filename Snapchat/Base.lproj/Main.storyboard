@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -152,23 +153,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHK-79-rIY">
-                                <rect key="frame" x="10" y="74" width="355" height="552"/>
+                                <rect key="frame" x="10" y="74" width="355" height="355"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VHK-79-rIY" secondAttribute="height" multiplier="1:1" id="hjX-uI-NeE"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqz-Xx-d1B">
+                                <rect key="frame" x="137" y="479" width="100" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.82539762993990295" blue="0.20453064151859535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="k22-v9-tKE"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Reproducir"/>
+                                <connections>
+                                    <action selector="reproducirTapped:" destination="hdR-t1-wB7" eventType="touchUpInside" id="hOC-Vg-xvx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Rqz-Xx-d1B" firstAttribute="centerX" secondItem="c57-ma-H5E" secondAttribute="centerX" id="Cgr-uw-TcE"/>
                             <constraint firstItem="JUC-9V-aGx" firstAttribute="trailing" secondItem="K8T-LE-An1" secondAttribute="trailing" constant="5" id="D9F-Gl-oUU"/>
                             <constraint firstItem="K8T-LE-An1" firstAttribute="leading" secondItem="JUC-9V-aGx" secondAttribute="leading" constant="5" id="EUq-cz-Frs"/>
                             <constraint firstItem="K8T-LE-An1" firstAttribute="centerX" secondItem="c57-ma-H5E" secondAttribute="centerX" id="FEF-Nw-giP"/>
                             <constraint firstItem="JUC-9V-aGx" firstAttribute="trailing" secondItem="VHK-79-rIY" secondAttribute="trailing" constant="10" id="NGb-Ae-yBO"/>
+                            <constraint firstItem="Rqz-Xx-d1B" firstAttribute="top" secondItem="VHK-79-rIY" secondAttribute="bottom" constant="50" id="RZ9-F3-rZx"/>
                             <constraint firstItem="VHK-79-rIY" firstAttribute="top" secondItem="JUC-9V-aGx" secondAttribute="top" constant="10" id="XLh-xo-rvi"/>
                             <constraint firstItem="VHK-79-rIY" firstAttribute="leading" secondItem="JUC-9V-aGx" secondAttribute="leading" constant="10" id="mI8-jh-lML"/>
-                            <constraint firstItem="K8T-LE-An1" firstAttribute="top" secondItem="VHK-79-rIY" secondAttribute="bottom" constant="10" id="tbC-ZY-96T"/>
                             <constraint firstItem="JUC-9V-aGx" firstAttribute="bottom" secondItem="K8T-LE-An1" secondAttribute="bottom" constant="10" id="vNP-vM-wjD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JUC-9V-aGx"/>
                     </view>
                     <connections>
+                        <outlet property="btnReproducir" destination="Rqz-Xx-d1B" id="bCq-Ig-0mJ"/>
                         <outlet property="imageView" destination="VHK-79-rIY" id="Ats-T2-jej"/>
                         <outlet property="label" destination="K8T-LE-An1" id="FxZ-C1-Gbb"/>
                     </connections>

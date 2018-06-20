@@ -27,6 +27,8 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     var audioURL: URL?
     var audioPlayer : AVAudioPlayer?
     
+    var dataURLS: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
@@ -57,26 +59,27 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imagenesFolder = Storage.storage().reference().child("imagenes")
         let audiosFolder = Storage.storage().reference().child("audios")
         let audioData = NSData(contentsOf: audioURL!)! as Data
-        audiosFolder.child("\(audioID).mp4").putData(audioData, metadata: nil) {(metadata, error) in
+        audiosFolder.child("\(audioID).mp3").putData(audioData, metadata: nil) {(audioMetadata, error) in
             self.elegirContactoBoton.isEnabled = true
             
             if error != nil {
                 
             } else {
-                let audio = (metadata?.downloadURL()!.absoluteString)!
-                self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: audio)
-            }
-        }
-        
-        let imagenData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
-        imagenesFolder.child("\(imagenID).jpg").putData(imagenData, metadata: nil) { (metadata, error) in
-            self.elegirContactoBoton.isEnabled = true
-            
-            if error != nil {
+                let audio = (audioMetadata?.downloadURL()!.absoluteString)!
+                self.dataURLS.append(audio)
                 
-            } else {
-                let imagen = (metadata?.downloadURL()!.absoluteString)!
-                self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: imagen)
+                let imagenData = UIImageJPEGRepresentation(self.imageView.image!, 0.1)!
+                imagenesFolder.child("\(self.imagenID).jpg").putData(imagenData, metadata: nil) { (imageMetadata, error) in
+                    self.elegirContactoBoton.isEnabled = true
+                    
+                    if error != nil {
+                        
+                    } else {
+                        let imagen = (imageMetadata?.downloadURL()!.absoluteString)!
+                        self.dataURLS.append(imagen)
+                        self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: nil)
+                    }
+                }
             }
         }
     }
@@ -134,8 +137,8 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! ElegirUsuarioViewController
-        siguienteVC.imagenURL = sender as! String
-        siguienteVC.audioURL = sender as! String
+        siguienteVC.imagenURL = dataURLS[1]
+        siguienteVC.audioURL = dataURLS[0]
         siguienteVC.descrip = descripcionTextField.text!
         siguienteVC.imagenID = imagenID
         siguienteVC.audioID = audioID
